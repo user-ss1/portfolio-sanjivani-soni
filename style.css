@@ -120,11 +120,14 @@ line-height: 1;
 }
 .home-img{
     border-radius: 50%;
+    width: 21rem; /* Width ko aapki pasand ke hisab se adjust karein */
+    height: auto; /* Auto height maintain karne ke liye */
+    
 }
-.home-img img{
+.home-img img,.home-img img{
     position: relative;
     top:3rem;
-    /* width: 32vw; */
+   
     width: 15vw;
     border-radius: 30%;
     box-shadow:0 0  25px var(--main-color);
@@ -297,8 +300,8 @@ line-height: 1;
 .education{
     position: relative;
     max-width: 1200px;
-    margin: 100px auto;
-
+    /* margin: 100px auto; */
+  margin: 100px auto;
     padding:100px 15px;
     background: var(--second-bg-color);
 }
@@ -336,7 +339,27 @@ animation: a 6s linear forwards;
     }
 /*  */
 
+
+
+
+/*  */
 }
+
+/*  */
+.symbol{
+    color: var(--main-color);
+    /* font-size: 4rem; */
+    font-size: 24px; /* Adjust the size as needed */
+    margin-right: 1px; /* Adjust spacing as needed */
+    margin-left: 6px;
+    vertical-align: middle;
+    
+  
+}
+
+/*  */
+
+
 .timeline-item{
     margin-bottom: 40px;
     width: 100%;
@@ -426,6 +449,10 @@ animation: a 6s linear forwards;
 }
 .timeline-content:hover p {
     color: var(--main-color);
+    
+}
+.timeline-content:hover .symbol{
+    color: white;
 }
 .timeline-content:hover{
     transform: scale(1.05);
@@ -457,21 +484,10 @@ animation: a 6s linear forwards;
     background: var(--bg-color);
     color: black;
 }
-.skills h2{
+.skills h2,.education h2{
     margin-bottom: 5rem;
     color: white;
 }
-
-/* .skills-container {
-    display: grid;
-
-    align-items: center;
-    justify-content: center; 
-    gap: 2.5rem;
-    padding: 0 2rem;
-} */
-
-
 .skills-container .tech{
     display: grid;
      grid-template-columns: repeat(3,1fr); 
@@ -479,26 +495,37 @@ animation: a 6s linear forwards;
     gap: 2.5rem;
     margin-bottom: 2rem;
     
-
+    justify-content: center; 
+   
 }
-/* .skills-container .tech > :last-child {
-    margin-left: auto;
-    margin-right: auto;
-} */
+/* .tech> div {
+    border: 1px solid #ccc;
+    padding: 10px;
+  } */
 
-/* .tech > *:last-child {
-    grid-column: span 3;
-    margin: 0 auto;
-    justify-self: center;
-}  */
-
-/* .skills-container .tech > :last-child {
-    margin: 0;
+  /* .skills-container .tech > .skills-box:nth-last-child(2):nth-child(3n+1) {
+    grid-column: 1 / 2;
+    transform: translateX(50%);
 }
-  */
 
+.skills-container .tech > .skills-box:nth-last-child(2):nth-child(3n+2) {
+    grid-column: 2 / 3;
+    transform: translateX(50%);
+}
 
+.skills-container .tech > .skills-box:nth-last-child(1):nth-child(3n+1) {
+    grid-column: 2 / 3;
+    transform: translateX(-50%);
+}
 
+.skills-container .tech > .skills-box:nth-last-child(1):nth-child(3n+2) {
+    grid-column: 3 / 4;
+    transform: translateX(-50%);
+}
+ */
+
+  /*  */
+ 
 .skills-box{
     background-color: var(--main-color);
     height: 40rem;
@@ -506,8 +533,8 @@ animation: a 6s linear forwards;
     border: 0.5rem solid transparent;
     cursor: pointer;
     transition: 0.4 ease-in-out;
-  
 }
+    
 .skills-box:hover{
     background: white;
     color: black;
@@ -515,7 +542,16 @@ animation: a 6s linear forwards;
     transform: scale(1.03);
     
 }
-.skills-box:hover h4{color: var(--main-color);}
+.skills-box:hover h4{
+    /* color: var(--main-color) */
+    color: transparent; /* Text ki asli color ko transparent karein */
+    text-shadow: 
+    0 0 0 yellow,
+        0 0 0.5rem black;
+        
+         /* Outline ka color */
+        /* Outline ke andar ka color */
+}
 .skills-box  .skills-info{
     display: flex;
     flex-direction: column;
@@ -526,13 +562,14 @@ animation: a 6s linear forwards;
     padding: 4rem 4rem;
  
 }
+
 .skills-info h4{
     font-size: 3rem;
     font-weight: 800;
     line-break: 2;
     
 }
-.skills-info p,.skills-info li,h5{
+.skills-info p,li,h5{
     font-size: 1.6rem;
     font-weight: 600;
     max-height: 100px;
@@ -649,8 +686,34 @@ text-align: center;
         grid-template-columns: repeat(2,1fr);
         margin:0 5rem;
     }    */
-}@media (max-width:1052px){
+}
+@media (min-width:958px) {
+    .skills-container .tech > .skills-box:nth-last-child(2):nth-child(3n+1) {
+        grid-column: 1 / 2;
+        transform: translateX(50%);
+    }
 
+    .skills-container .tech > .skills-box:nth-last-child(2):nth-child(3n+2) {
+        grid-column: 2 / 3;
+        transform: translateX(50%);
+    }
+
+    .skills-container .tech > .skills-box:nth-last-child(1):nth-child(3n+1) {
+        grid-column: 2 / 3;
+        transform: translateX(-50%);
+    }
+
+    .skills-container .tech > .skills-box:nth-last-child(1):nth-child(3n+2) {
+        grid-column: 3 / 4;
+        transform: translateX(-50%);
+    }
+}
+
+
+@media (max-width:1052px){
+.education{
+    margin: 10REM 2REM;
+}
     .skills-container .tech{
         /* grid-template-columns: repeat(2,1fr); */
         grid-template-columns: repeat(auto-fit, minmax(27rem, 2fr)); /* Adjust the minmax value as needed */
@@ -713,6 +776,7 @@ text-align: center;
     .home{
         flex-direction: column-reverse;
         margin:5rem 4rem;
+        gap: 1rem;
     }
     .home-content h3{
 
@@ -752,8 +816,8 @@ text-align: center;
     }
     .timeline-item{
         width:100%;
-        padding-left: 80px;
-        padding-right: 25px;
+        /* padding-left: 80px;
+        padding-right: 25px; */
     }
     .skills-box {
             height: auto;
@@ -772,7 +836,7 @@ text-align: center;
     
         
 
-        .skills-info p,h5{
+        .skills-info p,h5,li,ul{
             font-size: 1.1rem;
             font-weight: 600;
             max-height: 100px;
@@ -892,7 +956,7 @@ a {
 a:hover {
     text-decoration: underline;
 }
-#title{
+#title,.education h2,.skills h2{
     font-size: 5rem;
     text-align: center;
     margin: 5rem 0;
